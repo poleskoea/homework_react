@@ -5,7 +5,9 @@ const DishList = (props) => {
   return (
     <ul>
       {props.food.map((dish) => (
-        <Dish dish={dish} />
+        <li>
+          <Dish dish={dish} onAddToCart={props.onAddToCart} />
+        </li>
       ))}
     </ul>
   );
