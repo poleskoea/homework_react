@@ -1,5 +1,4 @@
-import logo from "./logo.svg";
-import "./App.css";
+// import "./App.css";
 import DishList from "./components/DishList";
 import { food } from "./data/dishes";
 import { useState } from "react";
@@ -29,20 +28,19 @@ function App() {
     setCart(updatedCart);
   };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="text-3xl font-bold underline">Cart:</p>
+    <div>
+      <header className="flex flex-col items-center bg-stone-800">
+        <p className=" text-white text-3xl font-bold underline">Cart:</p>
         <ul>
           {cart.map((item) => {
             return (
-              <li>
+              <li className="text-white">
                 {item.name} : {item.amount}
               </li>
             );
           })}
         </ul>
-        <p className="text-3xl font-bold underline">Menu:</p>
+        <p className="text-white text-3xl font-bold underline">Menu:</p>
         <DishList food={food} onAddToCart={addToCartHandler} />
       </header>
     </div>
