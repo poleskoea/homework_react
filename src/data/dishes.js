@@ -1,4 +1,4 @@
-export const food = [
+export const dishes = [
   {
     name: "Borsch",
     ingredients: ["meat", "cabbage", "beetroot", "carrot", "water", "tomato"],

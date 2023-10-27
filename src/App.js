@@ -1,7 +1,8 @@
 // import "./App.css";
 import DishList from "./components/DishList";
-import { food } from "./data/dishes";
+import { dishes } from "./data/dishes";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -41,7 +42,10 @@ function App() {
           })}
         </ul>
         <p className="text-white text-3xl font-bold underline">Menu:</p>
-        <DishList food={food} onAddToCart={addToCartHandler} />
+        <DishList food={dishes} onAddToCart={addToCartHandler} />
+        <Link to="/menu" className="border text-white bg:olive">
+          fgfgfgg
+        </Link>
       </header>
     </div>
   );

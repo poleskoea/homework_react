@@ -1,13 +1,13 @@
 import React from "react";
 import Button from "./Button";
 
-const Dish = (props) => {
+const Dish = ({ dish, onAddToCart }) => {
   const addToCart = () => {
-    props.onAddToCart({ ...props.dish });
+    onAddToCart({ ...dish });
   };
   return (
     <div className="m-2 flex items-center gap-2">
-      <div>{props.dish.name}</div>
+      <div>{dish.name}</div>
 
       <Button onClick={addToCart}>Add to cart</Button>
     </div>
