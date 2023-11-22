@@ -1,23 +1,19 @@
-// import "./App.css";
+import { Outlet } from "react-router-dom";
+import { CartContainer } from "./containers/CartContainer";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { DishesContainer } from "./containers/DishesContainer";
 
-import { Link } from "react-router-dom";
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="h-screen bg-stone-800">
-      <header className="text-white text-5xl text-center">
-        Ресторан "У Евгения"
-      </header>
-      <Link to="/menu" className="ml-4 text-white text-3xl font-bold underline">
-        Menu
-      </Link>
-      <Link
-        to="/about"
-        className="ml-4 text-white text-3xl font-bold underline"
-      >
-        About
-      </Link>
-    </div>
+    <DishesContainer.Provider>
+      <QueryClientProvider client={queryClient}>
+        <CartContainer.Provider>
+          <Outlet />
+        </CartContainer.Provider>
+      </QueryClientProvider>
+    </DishesContainer.Provider>
   );
 }
 
